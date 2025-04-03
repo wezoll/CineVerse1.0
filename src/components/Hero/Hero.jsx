@@ -102,7 +102,7 @@ const Hero = () => {
                     onClick={toggleFavorite}
                   >
                     <img
-                      src={isFavorite ? "/btn-favorite-fill.png" : "/btn-favorite.png"}
+                      src={isFavorite ? "/CineVerse/btn-favorite-fill.png" : "/CineVerse/btn-favorite.png"}
                       alt="Favorite"
                       width="30"
                       height="30"
@@ -128,7 +128,6 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Модальное окно */}
       {showModal && selectedMovie && (
         <div className="movie-modal" onClick={closeModal}>
           <div
@@ -221,7 +220,7 @@ const Hero = () => {
                   onClick={toggleFavorite}
                 >
                   <img
-                    src={isFavorite ? "/heart-fill.png" : "/heart.png"}
+                    src={isFavorite ? "/CineVerse/heart-fill.png" : "/CineVerse/heart.png"}
                     alt="Heart Icon"
                     width="16"
                     height="16"

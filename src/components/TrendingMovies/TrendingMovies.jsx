@@ -129,7 +129,7 @@ const TrendingMovies = () => {
                     onClick={() => toggleFavorite(featuredMovie.id)}
                   >
                     <img
-                      src={favorites[featuredMovie.id] ? "/heart-fill.png" : "/heart.png"}
+                      src={favorites[featuredMovie.id] ? "/CineVerse/heart-fill.png" : "/CineVerse/heart.png"}
                       alt="Heart Icon"
                       width="20"
                       height="20"
@@ -191,7 +191,6 @@ const TrendingMovies = () => {
           </div>
         </div>
 
-        {/* Slider navigation */}
         <div className="trending-navigation">
           <button className="slider-prev-btn" onClick={prevSlide}>
             <svg
@@ -245,7 +244,6 @@ const TrendingMovies = () => {
         </div>
       </div>
 
-      {/* Movie info modal */}
       {showModal && selectedMovie && (
         <div className="movie-modal" onClick={closeModal}>
           <div
@@ -338,7 +336,7 @@ const TrendingMovies = () => {
                   onClick={() => selectedMovie && toggleFavorite(selectedMovie.id)}
                 >
                   <img
-                    src={selectedMovie && favorites[selectedMovie.id] ? "/heart-fill.png" : "/heart.png"}
+                    src={selectedMovie && favorites[selectedMovie.id] ? "/CineVerse/heart-fill.png" : "/CineVerse/heart.png"}
                     alt="Heart Icon"
                     width="16"
                     height="16"

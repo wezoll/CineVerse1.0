@@ -180,7 +180,6 @@ const Top10 = () => {
           )}
         </div>
       </div>
-      {/* Movie info modal */}
       {showModal && selectedMovie && (
         <div className="movie-modal" onClick={closeModal}>
           <div
@@ -266,7 +265,7 @@ const Top10 = () => {
                 </button>
                 <button className="modal-favorite-btn">
                   <img
-                    src="/heart.png"
+                    src="/CineVerse/heart.png"
                     alt="Heart Icon"
                     width="16"
                     height="16"

@@ -265,8 +265,8 @@ const MovieCategory = () => {
                             <img
                               src={
                                 isFavorite(movie.id)
-                                  ? "/heart-fill.png"
-                                  : "/heart.png"
+                                  ? "/CineVerse/heart-fill.png"
+                                  : "/CineVerse/heart.png"
                               }
                               alt="Heart Icon"
                               width="20"
@@ -308,7 +308,6 @@ const MovieCategory = () => {
         </div>
       </div>
 
-      {/* Модальное окно с информацией о фильме */}
       {showModal && selectedMovie && (
         <div className="movie-modal" onClick={closeModal}>
           <div
@@ -402,8 +401,8 @@ const MovieCategory = () => {
                   <img
                     src={
                       selectedMovie && favorites[selectedMovie.id]
-                        ? "/heart-fill.png"
-                        : "/heart.png"
+                        ? "/CineVerse/heart-fill.png"
+                        : "/CineVerse/heart.png"
                     }
                     alt="Heart Icon"
                     width="16"

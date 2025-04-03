@@ -200,7 +200,6 @@ const PopularSeries = () => {
           )}
         </div>
       </div>
-      {/* Movie info modal */}
       {showModal && selectedMovie && (
         <div className="movie-modal" onClick={closeModal}>
           <div
@@ -297,8 +296,8 @@ const PopularSeries = () => {
                   <img
                     src={
                       selectedMovie && favorites[selectedMovie.id]
-                        ? "/heart-fill.png"
-                        : "/heart.png"
+                        ? "/CineVerse/heart-fill.png"
+                        : "/CineVerse/heart.png"
                     }
                     alt="Heart Icon"
                     width="16"
