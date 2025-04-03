@@ -1,0 +1,240 @@
+.Top10-section {
+  padding: 2rem 0;
+  background-color: #000000;
+}
+
+.Top10-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.Top10-title {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.Top10-slider-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.Top10-slider {
+  display: flex;
+  overflow-x: auto; /* Изменено с hidden на auto */
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  gap: 15px;
+  padding: 10px 0;
+  width: 100%; /* Добавлено */
+}
+
+.Top10-slider::-webkit-scrollbar {
+  display: none; /* Скрываем скроллбар для Chrome, Safari и Opera */
+}
+
+.Top10-slider-page {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0; /* Добавлено */
+}
+
+.Top10-movie-card {
+  flex: 0 0 auto;
+  width: calc(16.666% - 12.5px);
+  min-width: 200px;
+  max-width: 250px; /* Добавлено ограничение максимальной ширины */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.Top10-movie-card:hover {
+  transform: scale(1.03);
+}
+
+.Top10-movie-poster {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.Top10-movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border-radius: 8px;
+}
+
+.top10-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 300px;
+  min-width: 230px;
+  margin-right: 10px;
+  /* Change the display to make numbers appear side by side with posters */
+  flex-direction: row;
+}
+
+/* Number styling - UPDATED */
+.number-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  left: -10px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+}
+
+.number-container {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+}
+
+.number {
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+}
+
+.number-text {
+  fill: #adbac8;
+  font-size: 120px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  -webkit-text-stroke: 2px #444;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.poster-wrapper {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-left: 40px;
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.poster-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border-radius: 5px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 102, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.slider-dot {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #0066ff;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 1600px) {
+  .Top10-movie-card {
+    width: calc(20% - 12px);
+  }
+}
+
+@media (max-width: 1400px) {
+  .Top10-movie-card {
+    width: calc(25% - 12px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .Top10-movie-card {
+    width: calc(33.333% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .Top10-movie-card {
+    width: calc(50% - 8px);
+  }
+}

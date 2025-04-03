@@ -1,0 +1,15 @@
+.mySwiper {
+    max-width: 1450px;
+    margin: 0 auto;
+  }
+  
+  .swiper {
+    /* mix-blend-mode: luminosity; */
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  
+  .slider-el {
+    width: 100%;
+    height: auto;
+  }

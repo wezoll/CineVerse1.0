@@ -1,0 +1,193 @@
+.popular-section {
+  padding: 2rem 0;
+  background-color: #000000;
+}
+
+.popular-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.popular-title {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.popular-slider-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* .popular-slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;ч(
+  -ms-overflow-style: none;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.popular-slider::-webkit-scrollbar {
+  display: none;
+} */
+
+.popular-slider {
+  display: flex;
+  overflow-x: auto; /* Изменено с hidden на auto */
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  gap: 15px;
+  padding: 10px 0;
+  width: 100%; /* Добавлено */
+}
+
+.popular-slider::-webkit-scrollbar {
+  display: none; /* Скрываем скроллбар для Chrome, Safari и Opera */
+}
+
+.popular-slider-page {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0; /* Добавлено */
+}
+
+.popular-movie-card {
+  flex: 0 0 auto;
+  width: calc(16.666% - 12.5px);
+  min-width: 200px;
+  max-width: 250px; /* Добавлено ограничение максимальной ширины */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.popular-movie-card:hover {
+  transform: scale(1.03);
+}
+
+.popular-movie-poster {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.popular-movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  border-radius: 8px;
+}
+
+.popular-movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  width: 100%;
+  color: white;
+  z-index: 2;
+}
+
+.popular-movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popular-movie-year {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 102, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.slider-dot {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #0066ff;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 1600px) {
+  .popular-movie-card {
+    width: calc(20% - 12px);
+  }
+}
+
+@media (max-width: 1400px) {
+  .popular-movie-card {
+    width: calc(25% - 12px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .popular-movie-card {
+    width: calc(33.333% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .popular-movie-card {
+    width: calc(50% - 8px);
+  }
+}

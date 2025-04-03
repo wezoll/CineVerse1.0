@@ -1,0 +1,49 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: calc(50% - 790px + 30px); /* (50% - половина ширины контейнера + отступ от края) */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(0, 102, 255, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 1510px) {
+    .scroll-to-top {
+      right: 30px;
+    }
+  }
+  
+  .scroll-to-top:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+  
+  .scroll-to-top svg {
+    color: white;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 0.8;
+      transform: translateY(0);
+    }
+  }
+  
+  .scroll-to-top {
+    animation: fadeIn 0.3s ease-in-out;
+  }

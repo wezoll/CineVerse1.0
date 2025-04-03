@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.trending-section {
+  padding: 2rem 0;
+  background-color: #000000;
+}
+
+.trending-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.trending-title {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Новый сеточный макет */
+.trending-layout {
+  display: flex;
+  gap: 21px; /* Точное расстояние из макета */
+  margin-bottom: 20px;
+}
+
+/* Стили для большого фичеред фильма */
+.featured-movie-card {
+  flex: 0 0 400px; /* Точная ширина из макета */
+  height: 351px; /* Точная высота из макета */
+}
+
+.featured-movie-poster {
+  width: 100%;
+  height: 351px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+}
+
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  border-radius: 8px;
+}
+
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  width: 100%;
+  color: white;
+  z-index: 2;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-year {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0 0 10px 0;
+}
+
+/* .movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.movie-genre-tag {
+  background-color: rgba(0, 102, 255, 0.2);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(0, 102, 255, 0.5);
+} */
+
+.featured-movie-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.more-info-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.more-info-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Сетка маленьких фильмов */
+.small-movies-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px; /* расстояние между фильмами из макета */
+  flex: 1;
+}
+
+.small-movie-card {
+  width: 160px; /* Точная ширина из макета */
+  height: 351px; /* Точная высота из макета, как у featured */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.small-movie-card:hover {
+  transform: scale(1.03);
+}
+
+.small-movie-poster {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+}
+
+.small-movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  z-index: 2;
+}
+
+.small-movie-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 0 3px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.small-movie-year {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Навигация слайдера */
+.trending-navigation {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slider-next-btn,
+.slider-prev-btn {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-next-btn:hover,
+.slider-prev-btn:hover {
+  background-color: rgba(0, 102, 255, 0.7);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.slider-dot {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #0066ff;
+}
+
+.small-movies-container {
+  position: relative;
+  flex: 1;
+}
+
+.movies-page-nav-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 102, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.movies-page-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* .movies-page-nav-btn:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+
+.small-movies-flex {
+  position: relative;
+  padding-right: 40px; /* Место для навигационной кнопки */
+}
+
+
+
+/* Адаптивный дизайн */
+@media (max-width: 1200px) {
+  .trending-layout {
+    flex-direction: column;
+  }
+
+  .featured-movie-card {
+    flex: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 21px;
+  }
+
+  .small-movies-flex {
+    justify-content: space-between;
+  }
+
+  .small-movie-card {
+    width: calc(33.333% - 14px);
+    height: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .small-movie-card {
+    width: calc(50% - 10.5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-poster {
+    flex: 0 0 200px;
+    height: 300px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .small-movie-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .movie-modal-content {
+    flex-direction: column;
+  }
+
+  .modal-poster {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .featured-movie-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .watch-btn,
+  .more-info-btn {
+    width: 100%;
+  }
+}

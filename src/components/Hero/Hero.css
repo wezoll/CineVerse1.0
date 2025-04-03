@@ -1,0 +1,169 @@
+.hero-section-main {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #000;
+}
+
+.hero-block-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.movie-card-main {
+  position: relative;
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.movie-image-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-info-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  color: white;
+}
+
+.movie-content-main {
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 40px;
+}
+
+.movie-title-main {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.release-date-main {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.movie-description-main {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 60px;
+}
+
+.action-buttons-main {
+  display: flex;
+  gap: 10px;
+}
+
+.details-button-main {
+  background-color: #053ba3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #ffffff;
+  text-align: left;
+  vertical-align: text-top;
+  font-size: 13px;
+  font-family: "Roboto";
+  line-height: auto;
+  border-style: hidden;
+  outline: none;
+  transition: background-color 0.3s;
+  height: 28px;
+  width: 109px;
+}
+
+.details-button-main:hover {
+  background-color: #003ecb;
+}
+
+.favorite-button-main {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: #053ba3;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.hero-model-main {
+  flex: 1;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .hero-block-main {
+    flex-direction: column;
+  }
+
+  .movie-card-main {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-model-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-card-main {
+    height: 350px;
+  }
+
+  .movie-content-main {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .movie-title-main {
+    font-size: 24px;
+  }
+
+  .movie-description-main {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .movie-content-main {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
