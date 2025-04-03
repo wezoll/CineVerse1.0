@@ -115,7 +115,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <i className="fas fa-envelope"></i>
-                  <span>support@cineverse.com</span>
+                  <a href="mailto:cineverse@gmail.com" className="footer-email">
+                    support@cineverse.com
+                  </a>
                 </li>
                 <li>
                   <i className="fas fa-phone"></i>
