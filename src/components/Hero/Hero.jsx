@@ -9,7 +9,7 @@ import deadpool from "../../assets/Hero/deadpool.png";
 import moviesData from "../../../db.json";
 
 const Knight = () => {
-  const gltf = useLoader(GLTFLoader, "/deadpool/scene.gltf");
+  const gltf = useLoader(GLTFLoader, "/CineVerse/deadpool/scene.gltf");
   const knightRef = useRef();
 
   useFrame(() => {
