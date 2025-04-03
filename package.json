@@ -3,13 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://wezoll.github.io/cineverse",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "json-server --watch db.json --port 5000",
-    "dev:all": "concurrently \"npm run dev\" \"npm run server\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.5",
@@ -30,6 +33,7 @@
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^3.2.3",
     "globals": "^15.15.0",
     "vite": "^6.2.0"
   }
