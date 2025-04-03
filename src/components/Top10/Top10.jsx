@@ -265,7 +265,7 @@ const Top10 = () => {
                 </button>
                 <button className="modal-favorite-btn">
                   <img
-                    src="/CineVerse/heart.png"
+                    src="/CineVerse/images/heart.png"
                     alt="Heart Icon"
                     width="16"
                     height="16"

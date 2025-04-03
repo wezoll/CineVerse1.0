@@ -102,7 +102,7 @@ const Hero = () => {
                     onClick={toggleFavorite}
                   >
                     <img
-                      src={isFavorite ? "/CineVerse/btn-favorite-fill.png" : "/CineVerse/btn-favorite.png"}
+                      src={isFavorite ? "/CineVerse/images/btn-favorite-fill.png" : "/CineVerse/images/btn-favorite.png"}
                       alt="Favorite"
                       width="30"
                       height="30"
@@ -220,7 +220,7 @@ const Hero = () => {
                   onClick={toggleFavorite}
                 >
                   <img
-                    src={isFavorite ? "/CineVerse/heart-fill.png" : "/CineVerse/heart.png"}
+                    src={isFavorite ? "/CineVerse/images/heart-fill.png" : "/CineVerse/images/heart.png"}
                     alt="Heart Icon"
                     width="16"
                     height="16"

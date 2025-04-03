@@ -272,8 +272,8 @@ const PopularFilms = () => {
                   <img
                     src={
                       selectedMovie && favorites[selectedMovie.id]
-                        ? "/CineVerse/heart-fill.png"
-                        : "/CineVerse/heart.png"
+                        ? "/CineVerse/images/heart-fill.png"
+                        : "/CineVerse/images/heart.png"
                     }
                     alt="Heart Icon"
                     width="16"

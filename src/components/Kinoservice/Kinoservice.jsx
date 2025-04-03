@@ -28,7 +28,7 @@ const Kinoservice = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="Netflix.svg" className="slider-el" alt="Netflix" />
+          <img src="/CineVerse/images/Netflix.svg" className="slider-el" alt="Netflix" />
         </a>
       </SwiperSlide>
       <SwiperSlide>
@@ -37,7 +37,7 @@ const Kinoservice = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="Kinopoisk.svg" className="slider-el" alt="Kinopoisk" />
+          <img src="/CineVerse/images/Kinopoisk.svg" className="slider-el" alt="Kinopoisk" />
         </a>
       </SwiperSlide>
       <SwiperSlide>
@@ -46,7 +46,7 @@ const Kinoservice = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="Ivi.svg" className="slider-el" alt="Ivi" />
+          <img src="/CineVerse/images/Ivi.svg" className="slider-el" alt="Ivi" />
         </a>
       </SwiperSlide>
       <SwiperSlide>
@@ -55,7 +55,7 @@ const Kinoservice = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="Premier.svg" className="slider-el" alt="Premier" />
+          <img src="/CineVerse/images/Premier.svg" className="slider-el" alt="Premier" />
         </a>
       </SwiperSlide>
       <SwiperSlide>
@@ -64,7 +64,7 @@ const Kinoservice = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="Megogo.svg" className="slider-el" alt="Megogo" />
+          <img src="/CineVerse/images/Megogo.svg" className="slider-el" alt="Megogo" />
         </a>
       </SwiperSlide>
     </Swiper>

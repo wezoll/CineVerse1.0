@@ -129,7 +129,7 @@ const TrendingMovies = () => {
                     onClick={() => toggleFavorite(featuredMovie.id)}
                   >
                     <img
-                      src={favorites[featuredMovie.id] ? "/CineVerse/heart-fill.png" : "/CineVerse/heart.png"}
+                      src={favorites[featuredMovie.id] ? "/CineVerse/images/heart-fill.png" : "/CineVerse/images/heart.png"}
                       alt="Heart Icon"
                       width="20"
                       height="20"
@@ -336,7 +336,7 @@ const TrendingMovies = () => {
                   onClick={() => selectedMovie && toggleFavorite(selectedMovie.id)}
                 >
                   <img
-                    src={selectedMovie && favorites[selectedMovie.id] ? "/CineVerse/heart-fill.png" : "/CineVerse/heart.png"}
+                    src={selectedMovie && favorites[selectedMovie.id] ? "/CineVerse/images/heart-fill.png" : "/CineVerse/images/heart.png"}
                     alt="Heart Icon"
                     width="16"
                     height="16"

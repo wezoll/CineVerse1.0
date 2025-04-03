@@ -17,7 +17,6 @@ const MovieCategory = () => {
     ? moviesData
     : [];
 
-  // Загрузка избранного из localStorage при монтировании компонента
   useEffect(() => {
     const savedFavorites = localStorage.getItem("movieFavorites");
     if (savedFavorites) {
@@ -25,12 +24,10 @@ const MovieCategory = () => {
     }
   }, []);
 
-  // Сохранение избранного в localStorage при изменении
   useEffect(() => {
     localStorage.setItem("movieFavorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  // Функция для переключения статуса избранного
   const toggleFavorite = (movieId) => {
     setFavorites((prevFavorites) => {
       const newFavorites = { ...prevFavorites };
@@ -43,7 +40,6 @@ const MovieCategory = () => {
     });
   };
 
-  // Проверка, находится ли фильм в избранном
   const isFavorite = (movieId) => {
     return !!favorites[movieId];
   };
@@ -136,15 +132,14 @@ const MovieCategory = () => {
     if (slider) {
       slider.addEventListener("scroll", checkScrollButtons);
 
-      setTimeout(checkScrollButtons, 100); // Небольшая задержка для уверенности, что DOM обновился
+      setTimeout(checkScrollButtons, 100);
 
       return () => {
         slider.removeEventListener("scroll", checkScrollButtons);
       };
     }
-  }, [uniqueMovies]); // Используем uniqueMovies вместо filteredMovies
+  }, [uniqueMovies]);
 
-  // Добавляем обработчик изменения размера окна
   useEffect(() => {
     const handleResize = () => {
       checkScrollButtons();
@@ -160,7 +155,6 @@ const MovieCategory = () => {
     setSelectedCategory(category);
     if (sliderRef.current) {
       sliderRef.current.scrollLeft = 0;
-      // Маленькая задержка, чтобы DOM успел обновиться
       setTimeout(checkScrollButtons, 100);
     }
   };
@@ -265,8 +259,8 @@ const MovieCategory = () => {
                             <img
                               src={
                                 isFavorite(movie.id)
-                                  ? "/CineVerse/heart-fill.png"
-                                  : "/CineVerse/heart.png"
+                                  ? "/CineVerse/images/heart-fill.png"
+                                  : "/CineVerse/images/heart.png"
                               }
                               alt="Heart Icon"
                               width="20"
@@ -401,8 +395,8 @@ const MovieCategory = () => {
                   <img
                     src={
                       selectedMovie && favorites[selectedMovie.id]
-                        ? "/CineVerse/heart-fill.png"
-                        : "/CineVerse/heart.png"
+                        ? "/CineVerse/images/heart-fill.png"
+                        : "/CineVerse/images/heart.png"
                     }
                     alt="Heart Icon"
                     width="16"
