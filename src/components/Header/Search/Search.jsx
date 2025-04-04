@@ -247,8 +247,8 @@ const Search = ({ isOpen, onClose }) => {
                   <img
                     src={
                       selectedMovie && favorites[selectedMovie.id]
-                        ? "/heart-fill.png"
-                        : "/heart.png"
+                        ? "/CineVerse/images/heart-fill.png"
+                        : "/CineVerse/images/heart.png"
                     }
                     alt="Heart Icon"
                     width="16"
