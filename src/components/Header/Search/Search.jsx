@@ -240,7 +240,7 @@ const Search = ({ isOpen, onClose }) => {
                 <button
                   className="modal-favorite-btn"
                   onClick={(e) => {
-                    e.stopPropagation(); // Prevent closing the modal when clicking the favorite button
+                    e.stopPropagation();
                     selectedMovie && toggleFavorite(selectedMovie.id);
                   }}
                 >

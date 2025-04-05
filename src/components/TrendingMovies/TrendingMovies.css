@@ -26,17 +26,15 @@ body {
   position: relative;
 }
 
-/* Новый сеточный макет */
 .trending-layout {
   display: flex;
-  gap: 21px; /* Точное расстояние из макета */
+  gap: 21px;
   margin-bottom: 20px;
 }
 
-/* Стили для большого фичеред фильма */
 .featured-movie-card {
-  flex: 0 0 400px; /* Точная ширина из макета */
-  height: 351px; /* Точная высота из макета */
+  flex: 0 0 400px;
+  height: 351px; 
 }
 
 .featured-movie-poster {
@@ -139,17 +137,16 @@ body {
   transform: scale(1.1);
 }
 
-/* Сетка маленьких фильмов */
 .small-movies-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px; /* расстояние между фильмами из макета */
+  gap: 22px;
   flex: 1;
 }
 
 .small-movie-card {
-  width: 160px; /* Точная ширина из макета */
-  height: 351px; /* Точная высота из макета, как у featured */
+  width: 160px; 
+  height: 351px;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -195,7 +192,6 @@ body {
   margin: 0;
 }
 
-/* Навигация слайдера */
 .trending-navigation {
   display: flex;
   align-items: center;
@@ -277,12 +273,11 @@ body {
 
 .small-movies-flex {
   position: relative;
-  padding-right: 40px; /* Место для навигационной кнопки */
+  padding-right: 40px;
 }
 
 
 
-/* Адаптивный дизайн */
 @media (max-width: 1200px) {
   .trending-layout {
     flex-direction: column;

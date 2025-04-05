@@ -28,7 +28,6 @@ const PopularFilms = () => {
     }
   };
 
-  // Прокрутка слайдера влево
   const scrollLeft = () => {
     if (sliderRef.current) {
       const slider = sliderRef.current;

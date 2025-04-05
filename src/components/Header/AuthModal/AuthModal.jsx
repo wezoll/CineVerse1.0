@@ -9,7 +9,6 @@ const AuthModal = () => {
     <div className="auth-page modal-auth-page">
       <div className="auth-container">
         {!showSignup ? (
-          // Форма входа
           <div className="auth-form login-form">
             <h2 className="form-title">Вход в аккаунт</h2>
             
@@ -44,7 +43,6 @@ const AuthModal = () => {
             </div>
           </div>
         ) : (
-          // Форма регистрации
           <div className="auth-form signup-form">
             <h2 className="form-title">Создать аккаунт</h2>
             

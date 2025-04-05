@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -52,7 +54,6 @@ li {
   align-items: center;
 }
 
-/* Модальное окно */
 .movie-modal {
   position: fixed;
   top: 0;
@@ -159,7 +160,7 @@ li {
 }
 
 .modal-details {
-  margin-bottom: auto; /* Это отталкивает кнопки вниз */
+  margin-bottom: auto;
   flex: 1;
   overflow-y: auto;
 }
@@ -196,7 +197,6 @@ li {
   gap: 10px;
   margin-top: 20px;
   flex-wrap: wrap;
-  /* Всегда внизу модального окна */
   margin-top: auto;
 }
 

@@ -1,7 +1,7 @@
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
-    right: calc(50% - 790px + 30px); /* (50% - половина ширины контейнера + отступ от края) */
+    right: calc(50% - 790px + 30px);
     width: 45px;
     height: 45px;
     border-radius: 50%;

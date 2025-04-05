@@ -16,7 +16,6 @@ const PopularSeries = () => {
     ? movies.filter((movie) => movie.category === "popularS")
     : [];
 
-  // Загрузка избранного из localStorage при монтировании компонента
   useEffect(() => {
     const savedFavorites = localStorage.getItem("movieFavorites");
     if (savedFavorites) {
@@ -24,12 +23,10 @@ const PopularSeries = () => {
     }
   }, []);
 
-  // Сохранение избранного в localStorage при изменении
   useEffect(() => {
     localStorage.setItem("movieFavorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  // Функция для переключения статуса избранного
   const toggleFavorite = (movieId) => {
     setFavorites((prevFavorites) => {
       const newFavorites = { ...prevFavorites };
@@ -42,7 +39,6 @@ const PopularSeries = () => {
     });
   };
 
-  // Проверка, находится ли фильм в избранном
   const isFavorite = (movieId) => {
     return !!favorites[movieId];
   };
