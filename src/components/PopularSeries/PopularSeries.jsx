@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./PopularSeries.css";
 import moviesData from "../../../db.json";
+import MovieModal from "../MovieModal/MovieModal";
+import TrailerModal from "../TrailerModal/TrailerModal";
 
 const PopularSeries = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -8,6 +10,9 @@ const PopularSeries = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [favorites, setFavorites] = useState({});
+  const [showTrailerModal, setShowTrailerModal] = useState(false);
+  const [showExternalModal, setShowExternalModal] = useState(false);
+  const [externalUrl, setExternalUrl] = useState("");
   const sliderRef = useRef(null);
 
   const movies = moviesData.movies || moviesData;
@@ -101,10 +106,44 @@ const PopularSeries = () => {
     document.body.style.overflow = "auto";
   };
 
+  const openTrailerModal = (url) => {
+    setShowTrailerModal(true);
+    setShowModal(false);
+  };
+
+  const closeTrailerModal = () => {
+    setShowTrailerModal(false);
+    setShowModal(true);
+  };
+
+  const openExternalModal = (url) => {
+    setExternalUrl(url);
+    setShowExternalModal(true);
+  };
+
+  const closeExternalModal = () => {
+    setShowExternalModal(false);
+  };
+
+  const handleExternalLink = (url) => {
+    openExternalModal(url);
+  };
+
+  const confirmExternalRedirect = () => {
+    window.open(externalUrl, "_blank");
+    closeExternalModal();
+  };
+
   useEffect(() => {
     const handleEscKey = (event) => {
-      if (event.key === "Escape" && showModal) {
-        closeModal();
+      if (event.key === "Escape") {
+        if (showExternalModal) {
+          closeExternalModal();
+        } else if (showTrailerModal) {
+          closeTrailerModal();
+        } else if (showModal) {
+          closeModal();
+        }
       }
     };
 
@@ -112,7 +151,9 @@ const PopularSeries = () => {
     return () => {
       window.removeEventListener("keydown", handleEscKey);
     };
-  }, [showModal]);
+  }, [showModal, showTrailerModal, showExternalModal]);
+
+  const currentFavorite = selectedMovie ? isFavorite(selectedMovie.id) : false;
 
   if (PopularSeries.length === 0) {
     return (
@@ -196,115 +237,28 @@ const PopularSeries = () => {
           )}
         </div>
       </div>
-      {showModal && selectedMovie && (
-        <div className="movie-modal" onClick={closeModal}>
-          <div
-            className="movie-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="modal-close-btn" onClick={closeModal}>
-              ×
-            </button>
-            <div
-              className="modal-poster"
-              style={{ backgroundImage: `url(${selectedMovie.poster})` }}
-            ></div>
-            <div className="modal-info">
-              <h2 className="modal-title">{selectedMovie.title}</h2>
-              <div className="modal-rating">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                    fill="#FFD700"
-                    stroke="#FFD700"
-                    strokeWidth="1"
-                  />
-                </svg>
-                <span className="modal-rating-value">
-                  {selectedMovie.rating}
-                </span>
-                <span className="modal-year">{selectedMovie.year}</span>
-              </div>
-              <div className="modal-genres">
-                {selectedMovie.genre &&
-                  selectedMovie.genre.map((g, index) => (
-                    <span key={index} className="modal-genre-tag">
-                      {g}
-                    </span>
-                  ))}
-              </div>
-              <div className="modal-details">
-                <p>
-                  <strong>Режиссер:</strong>{" "}
-                  {selectedMovie.director
-                    ? Array.isArray(selectedMovie.director)
-                      ? selectedMovie.director.join(", ")
-                      : selectedMovie.director
-                    : "Не указан"}
-                </p>
-                <p>
-                  <strong>В ролях:</strong>{" "}
-                  {selectedMovie.actors
-                    ? selectedMovie.actors.join(", ")
-                    : "Не указаны"}
-                </p>
-                <p className="modal-description">
-                  {selectedMovie.description || "Описание отсутствует"}
-                </p>
-              </div>
-              <div className="modal-actions">
-                <button className="modal-watch-btn">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M5 3L19 12L5 21V3Z" fill="white" />
-                  </svg>
-                  Смотреть
-                </button>
-                <button className="modal-trailer-btn">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M18 12L8 5V19L18 12Z" fill="white" />
-                  </svg>
-                  Трейлер
-                </button>
-                <button
-                  className="modal-favorite-btn"
-                  onClick={() =>
-                    selectedMovie && toggleFavorite(selectedMovie.id)
-                  }
-                >
-                  <img
-                    src={
-                      selectedMovie && favorites[selectedMovie.id]
-                        ? "/CineVerse/images/heart-fill.png"
-                        : "/CineVerse/images/heart.png"
-                    }
-                    alt="Heart Icon"
-                    width="16"
-                    height="16"
-                  />
-                  В избранное
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <MovieModal 
+        selectedMovie={selectedMovie}
+        showModal={showModal}
+        closeModal={closeModal}
+        handleExternalLink={handleExternalLink}
+        openTrailerModal={openTrailerModal}
+        showExternalModal={showExternalModal}
+        closeExternalModal={closeExternalModal}
+        confirmExternalRedirect={confirmExternalRedirect}
+        externalUrl={externalUrl}
+        isFavorite={currentFavorite}
+        toggleFavorite={() => selectedMovie && toggleFavorite(selectedMovie.id)}
+      />
+
+      {showTrailerModal && selectedMovie && (
+        <TrailerModal 
+          isOpen={showTrailerModal}
+          onClose={closeTrailerModal}
+          trailerUrl={selectedMovie.trailerLink}
+          movieTitle={selectedMovie.title}
+        />
       )}
     </section>
   );

@@ -93,7 +93,7 @@
   flex: 0 0 auto;
   width: calc(
     20% - 12px
-  ); /* Изменено с 25% на 20%, чтобы было 5 фильмов в ряду */
+  );
   min-width: 180px;
   max-width: 280px;
   border-radius: 8px;

@@ -28,30 +28,30 @@
 
 .Top10-slider {
   display: flex;
-  overflow-x: auto; /* Изменено с hidden на auto */
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Для Firefox */
-  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
   gap: 15px;
   padding: 10px 0;
-  width: 100%; /* Добавлено */
+  width: 100%; 
 }
 
 .Top10-slider::-webkit-scrollbar {
-  display: none; /* Скрываем скроллбар для Chrome, Safari и Opera */
+  display: none; 
 }
 
 .Top10-slider-page {
   display: flex;
   gap: 15px;
-  flex-shrink: 0; /* Добавлено */
+  flex-shrink: 0;
 }
 
 .Top10-movie-card {
   flex: 0 0 auto;
   width: calc(16.666% - 12.5px);
   min-width: 200px;
-  max-width: 250px; /* Добавлено ограничение максимальной ширины */
+  max-width: 250px;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -92,11 +92,9 @@
   height: 300px;
   min-width: 230px;
   margin-right: 10px;
-  /* Change the display to make numbers appear side by side with posters */
   flex-direction: row;
 }
 
-/* Number styling - UPDATED */
 .number-wrapper {
   position: absolute;
   height: 100%;
@@ -214,7 +212,7 @@
   background-color: #0066ff;
 }
 
-/* Адаптивный дизайн */
+
 @media (max-width: 1600px) {
   .Top10-movie-card {
     width: calc(20% - 12px);
@@ -238,3 +236,4 @@
     width: calc(50% - 8px);
   }
 }
+
