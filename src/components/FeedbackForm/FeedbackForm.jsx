@@ -148,7 +148,7 @@ const FeedbackForm = () => {
 
         <div className="feedback-logo-container">
           <img
-            src="/CineVerse/images/feedback.svg"
+            src="/CineVerse1.0/images/feedback.svg"
             alt=""
             className="feedback-logo"
           />

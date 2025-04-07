@@ -11,7 +11,7 @@ import MovieModal from "../MovieModal/MovieModal";
 import TrailerModal from "../TrailerModal/TrailerModal";
 
 const Knight = () => {
-  const gltf = useLoader(GLTFLoader, "/CineVerse/deadpool/scene.gltf");
+  const gltf = useLoader(GLTFLoader, "/CineVerse1.0/deadpool/scene.gltf");
   const knightRef = useRef();
 
   useFrame(() => {
@@ -141,7 +141,7 @@ const Hero = () => {
                     onClick={toggleFavorite}
                   >
                     <img
-                      src={isFavorite ? "/CineVerse/images/btn-favorite-fill.png" : "/CineVerse/images/btn-favorite.png"}
+                      src={isFavorite ? "/CineVerse1.0/images/btn-favorite-fill.png" : "/CineVerse1.0/images/btn-favorite.png"}
                       alt="Favorite"
                       width="30"
                       height="30"

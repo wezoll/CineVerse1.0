@@ -15,7 +15,7 @@ const Footer = () => {
               <p>Следите за нами</p>
               <div className="social-icons">
                 <a
-                  href="https://github.com/wezoll/CineVerse"
+                  href="https://github.com/wezoll/CineVerse1.0"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"

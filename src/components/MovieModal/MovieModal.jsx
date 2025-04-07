@@ -118,8 +118,8 @@ const MovieModal = ({
               >
                 <img
                   src={isFavorite 
-                    ? "/CineVerse/images/heart-fill.png" 
-                    : "/CineVerse/images/heart.png"
+                    ? "/CineVerse1.0/images/heart-fill.png" 
+                    : "/CineVerse1.0/images/heart.png"
                   }
                   alt="Heart Icon"
                   width="16"
