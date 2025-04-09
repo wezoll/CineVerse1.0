@@ -1,5 +1,5 @@
 ## Структура проекта
-
+website: https://wezoll.github.io/CineVerse1.0/
 ```
 project/
 ├── .github/                      # Директория конфигурации GitHub
