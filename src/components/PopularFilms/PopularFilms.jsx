@@ -133,7 +133,9 @@ const PopularFilms = () => {
     };
   }, [showModal, showTrailerModal, showExternalModal]);
 
-  const isFavorite = selectedMovie ? favorites[selectedMovie.id] || false : false;
+  const isFavorite = selectedMovie
+    ? favorites[selectedMovie.id] || false
+    : false;
 
   if (PopularFilms.length === 0) {
     return (
@@ -216,8 +218,8 @@ const PopularFilms = () => {
           )}
         </div>
       </div>
-      
-      <MovieModal 
+
+      <MovieModal
         selectedMovie={selectedMovie}
         showModal={showModal}
         closeModal={closeModal}
@@ -231,8 +233,8 @@ const PopularFilms = () => {
         toggleFavorite={() => selectedMovie && toggleFavorite(selectedMovie.id)}
       />
 
-һ      {showTrailerModal && selectedMovie && (
-        <TrailerModal 
+      {showTrailerModal && selectedMovie && (
+        <TrailerModal
           isOpen={showTrailerModal}
           onClose={closeTrailerModal}
           trailerUrl={selectedMovie.trailerLink}
